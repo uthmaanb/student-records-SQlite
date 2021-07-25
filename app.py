@@ -35,7 +35,7 @@ def add_new_record():
             pin = request.form['pin']
             with sqlite3.connect('database.db') as con:
                 cur = con.cursor()
-                cur.execute("INSERT INTO students (name, address, city, pin) VALUES (?, ?, ?, ?)", (name, address, city,
+                cur.execute("INSERT INTO students (name, addr, city, pin) VALUES (?, ?, ?, ?)", (name, address, city,
                                                                                                     pin))
                 con.commit()
                 msg = "Record successfully added."
